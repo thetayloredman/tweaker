@@ -1,3 +1,7 @@
 /target
 /.direnv
 /deps
+/gen
+/logs
+/media
+/tweaker.toml
