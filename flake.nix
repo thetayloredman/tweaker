@@ -39,25 +39,6 @@
             nixfmt
           ];
         };
-
-        packages.tweaker =
-          let
-            naerskLib = naersk.lib.${system}.override {
-              cargo = rust;
-              rustc = rust;
-            };
-          in
-          naerskLib.buildPackage {
-            pname = "zrc";
-            src = ./.;
-            buildInputs = with pkgs; [
-              rust
-              openssl
-              pkg-config
-            ];
-          };
-
-        packages.default = self.packages.${system}.tweaker;
       }
     );
 }
